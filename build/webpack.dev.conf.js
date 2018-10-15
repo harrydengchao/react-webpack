@@ -57,7 +57,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'html/index.html',
-      inject: true
+      inject: true,
+      minify: {
+          // 压缩HTML文件
+          removeComments: true, // 移除HTML中的注释
+          collapseWhitespace: false, // 删除空白符与换行符
+      },
     }),
     // copy custom static assets
     new CopyWebpackPlugin([

@@ -1,5 +1,6 @@
 'use strict'
 const path = require('path')
+const es3ifyPlugin = require('es3ify-webpack-plugin')
 const utils = require('./utils')
 const config = require('../config')
 
@@ -33,6 +34,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
     alias: {
+      'react': 'anujs/dist/ReactIE',
+      'react-dom': 'anujs/dist/ReactIE',
+      'prop-types': 'anujs/lib/ReactPropTypes',
+      'create-react-class': 'anujs/lib/createClass',
       '@': resolve('src'),
     }
   },
@@ -70,6 +75,9 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new es3ifyPlugin()
+  ],
   node: {
     setImmediate: false,
     // prevent webpack from injecting mocks to Node native modules
