@@ -22,7 +22,12 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/index.js'
+    'es5-shim': 'es5-shim',
+    'es5-shim/es5-sham': 'es5-shim/es5-sham',
+    'polyfill': 'babel-polyfill',
+    'console-polyfill': 'console-polyfill',
+    'normalize.css': 'normalize.css',
+    'app': './src/index.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -36,10 +41,12 @@ module.exports = {
     alias: {
       'react': 'anujs/dist/ReactIE',
       'react-dom': 'anujs/dist/ReactIE',
+      'router': "anujs/dist/Router.js",
       'prop-types': 'anujs/lib/ReactPropTypes',
       'create-react-class': 'anujs/lib/createClass',
       'devtools': 'anujs/lib/devtools',
-      '@': resolve('src'),
+      '@src': resolve('src'),
+      '@static': resolve('static'),
     }
   },
   module: {
@@ -48,7 +55,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [resolve('src'), resolve('test'), resolve('static'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

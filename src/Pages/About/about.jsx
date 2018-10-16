@@ -1,6 +1,6 @@
+import './about.scss'
 import React, { Component } from 'react'
 import logo from '../images/logo.png'
-import './App.scss'
 
 class App extends Component {
   render () {
