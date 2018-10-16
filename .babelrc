@@ -4,12 +4,18 @@
       "modules": false,
       "targets": {
         "browsers": ["last 2 versions", "ie >= 7"]
-      }
+      },
+      "loose": true
     }],
+    ["es2015", {"loose": true}],
     "react",
     "stage-2"
   ],
-  "plugins": ["transform-runtime"],
+  "plugins": [
+    "transform-es3-property-literals",
+    "transform-es3-member-expression-literals",
+    "transform-runtime"
+  ],
   "env": {
     "test": {
       "presets": ["env", "stage-2"],

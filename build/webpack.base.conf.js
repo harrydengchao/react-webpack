@@ -38,6 +38,7 @@ module.exports = {
       'react-dom': 'anujs/dist/ReactIE',
       'prop-types': 'anujs/lib/ReactPropTypes',
       'create-react-class': 'anujs/lib/createClass',
+      'devtools': 'anujs/lib/devtools',
       '@': resolve('src'),
     }
   },
@@ -45,7 +46,7 @@ module.exports = {
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
