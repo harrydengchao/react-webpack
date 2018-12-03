@@ -1,25 +1,13 @@
 {
   "presets": [
+    "react",
     ["env", {
       "modules": false,
       "targets": {
-        "browsers": ["last 2 versions", "ie >= 7"]
-      },
-      "loose": true
+        "browsers": ["> 1%", "last 2 versions", "not ie <= 8", "iOS >= 8", "Android >= 4.1"]
+      }
     }],
-    ["es2015", {"loose": true}],
-    "react",
     "stage-2"
   ],
-  "plugins": [
-    "transform-es3-property-literals",
-    "transform-es3-member-expression-literals",
-    "transform-runtime"
-  ],
-  "env": {
-    "test": {
-      "presets": ["env", "stage-2"],
-      "plugins": ["transform-es2015-modules-commonjs", "dynamic-import-node"]
-    }
-  }
+  "plugins": ["transform-runtime"]
 }

@@ -1,6 +1,5 @@
 'use strict'
 const path = require('path')
-const es3ifyPlugin = require('es3ify-webpack-plugin')
 const utils = require('./utils')
 const config = require('../config')
 
@@ -22,12 +21,7 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    'es5-shim': 'es5-shim',
-    'es5-shim/es5-sham': 'es5-shim/es5-sham',
-    'polyfill': 'babel-polyfill',
-    'console-polyfill': 'console-polyfill',
-    'normalize.css': 'normalize.css',
-    'app': './src/index.js'
+    app: './src/main.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -37,16 +31,9 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx'],
     alias: {
-      'react': 'anujs/dist/ReactIE',
-      'react-dom': 'anujs/dist/ReactIE',
-      'router': "anujs/dist/Router.js",
-      'prop-types': 'anujs/lib/ReactPropTypes',
-      'create-react-class': 'anujs/lib/createClass',
-      'devtools': 'anujs/lib/devtools',
-      '@src': resolve('src'),
-      '@static': resolve('static'),
+      '@': resolve('src'),
     }
   },
   module: {
@@ -55,7 +42,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('static'), resolve('node_modules/webpack-dev-server/client')]
+        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -83,10 +70,8 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new es3ifyPlugin()
-  ],
   node: {
+    // source contains it (although only uses it if it's native).
     setImmediate: false,
     // prevent webpack from injecting mocks to Node native modules
     // that does not make sense for the client

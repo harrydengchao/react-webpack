@@ -9,7 +9,7 @@ module.exports = {
     browser: true,
   },
   extends: [
-    'plugin:react/recommended',
+    'plugin:react/recommended', 
     // https://github.com/standard/standard/blob/master/docs/RULES-en.md
     'standard'
   ],
@@ -18,6 +18,13 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    "space-before-function-paren": ["error", "never"],
+    "no-useless-constructor": 0,
+    "no-trailing-spaces": [
+      "off"
+    ],
+    // allow paren-less arrow functions
+    'arrow-parens': 0,
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
