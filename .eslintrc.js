@@ -2,8 +2,13 @@
 
 module.exports = {
   root: true,
+  parser: 'babel-eslint',
   parserOptions: {
-    parser: 'babel-eslint'
+    ecmaFeatures: {
+      ecmaFeatures: {
+        jsx: true
+      }
+    }
   },
   env: {
     browser: true,

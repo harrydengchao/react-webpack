@@ -7,9 +7,22 @@ import PropTypes from 'prop-types'
 import styles from './home.module.scss'
 
 export class Index extends Component {
+  static propTypes = {
+    count: PropTypes.number,
+    increment: PropTypes.func,
+    incrementAsync: PropTypes.func
+  }
+
+  static defaultProps = {
+    count: 0,
+    increment() {},
+    incrementAsync() {}
+  }
+
   constructor(props) {
     super(props)
   }
+
   render() {
     return (
       <div className={cls(styles['index'])}>
@@ -23,11 +36,6 @@ export class Index extends Component {
       </div>
     )
   }
-}
-Index.propTypes = {
-  count: PropTypes.number,
-  increment: PropTypes.func,
-  incrementAsync: PropTypes.func
 }
 
 const mapState = state => ({
