@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 import cls from 'classnames'
 import { Link } from '@reach/router'
 
-import './about.scss'
+import './index.scss'
+
+const prefixCls = 'app-about'
 
 export class Index extends Component {
   render() {
     return (
-      <div className={cls('about')}>
+      <div className={cls(`${prefixCls}`)}>
         this is about.
         <Link to="/">to index.</Link>
       </div>

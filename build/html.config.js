@@ -24,7 +24,7 @@ module.exports = {
     return new HtmlWebpackPlugin({
       ...item,
       filename: config.build.assetsRoot + '/' + item.filename,
-      assetsPath: config.dev.assetsPublicPath,
+      assetsPath: config.build.assetsPublicPath,
       inject: true,
       minify: {
         removeComments: true,

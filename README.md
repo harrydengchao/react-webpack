@@ -2,7 +2,7 @@
 
 ---
 
-一款基于 `react`、`webpack` 的项目脚手架
+一款基于 `react`、`webpack` 的项目脚手架，定位于移动端
 
 ---
 
@@ -15,7 +15,7 @@
 
 ---
 
-## 局部样式引入方式(暂时只支持`scss`)
+## 组件模块，局部样式引入方式(暂时只支持`scss`)
 
 - 命名方式为 `[stylename].module.scss`
 - 组件中引入方式为 `import styles from './home.module.scss'`

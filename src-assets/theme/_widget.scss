@@ -1,0 +1,11 @@
+/* 主色调字体 */
+.primary-color {
+  color: $text-color-primary;
+}
+
+/* 清除浮动 */
+.clear-float {
+  clear: both;
+  visibility: hidden;
+  height: 0;
+}

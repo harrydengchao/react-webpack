@@ -6,7 +6,7 @@
   "homepage": "https://github.com/harrydengchao/react-webpack",
   "repository": {
     "type": "git",
-    "url": "git@github.com:nervjs/taro-ui.git"
+    "url": "git@github.com:harrydengchao/react-webpack.git"
   },
   "license": "MIT",
   "keywords": [
@@ -14,15 +14,17 @@
     "react-webpcak-cli"
   ],
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "lint": "eslint --ext .js,.jsx src",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "build": "node build/build.js",
+    "lint": "eslint --ext .js,.jsx src",
     "tag": "bump --prompt"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
     "@rematch/core": "^1.0.6",
+    "antd-mobile": "^2.2.6",
+    "axios": "^0.17.1",
     "classnames": "^2.2.6",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -33,6 +35,7 @@
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
     "babel-loader": "^7.1.1",
+    "babel-plugin-import": "^1.11.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.22.0",

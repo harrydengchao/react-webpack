@@ -75,7 +75,7 @@ exports.cssLoaders = function (options) {
     {
       extension: /\.module\.scss$/,
       loader: generateLoaders('sass-loader', {
-        cssLoaderOptions: { modules: true, localIdentName: '[name]__[local]-[hash:base64:5]' }
+        cssLoaderOptions: { modules: true, localIdentName: '[local]-[hash:base64:5]' }
       })
     }
   ]

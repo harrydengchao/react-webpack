@@ -4,7 +4,9 @@ import { Link } from '@reach/router'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import styles from './home.module.scss'
+import './index.scss'
+
+const prefixCls = 'app-home'
 
 export class Index extends Component {
   static propTypes = {
@@ -25,7 +27,7 @@ export class Index extends Component {
 
   render() {
     return (
-      <div className={cls(styles['index'])}>
+      <div className={cls(`${prefixCls}`)}>
         this is index.
         <Link to="/about">to about.</Link>
         <div>
