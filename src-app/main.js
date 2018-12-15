@@ -5,9 +5,14 @@ import { Provider } from 'react-redux'
 import RouterView from './router'
 import store from './store'
 
+import HeaderNavbar from '@components/header-navbar'
+
 const Root = () => (
   <Provider store={store}>
-    <RouterView />
+    <React.Fragment>
+      <HeaderNavbar />
+      <RouterView />
+    </React.Fragment>
   </Provider>
 )
 

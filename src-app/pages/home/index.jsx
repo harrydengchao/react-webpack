@@ -6,6 +6,10 @@ import PropTypes from 'prop-types'
 
 import './index.scss'
 
+import {
+  Button
+} from 'antd-mobile'
+
 const prefixCls = 'app-home'
 
 export class Index extends Component {
@@ -32,8 +36,8 @@ export class Index extends Component {
         <Link to="/about">to about.</Link>
         <div>
           The count is {this.props.count}
-          <button onClick={this.props.increment}>increment</button>
-          <button onClick={this.props.incrementAsync}>incrementAsync</button>
+          <Button type="primary" onClick={this.props.increment}>increment</Button>
+          <Button onClick={this.props.incrementAsync}>incrementAsync</Button>
         </div>
       </div>
     )
