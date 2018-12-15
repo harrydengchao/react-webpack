@@ -1,6 +1,8 @@
-@import "~@assets/theme/_variable.scss";
+@import '~@assets/theme/_themeify.scss';
 
-.index {
+.app-home {
   font-size: 18px;
-  color: #ff00ff;
+  @include themeify {
+    color: themed('text-color-primary');
+  }
 }
