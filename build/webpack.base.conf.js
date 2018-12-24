@@ -7,15 +7,18 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
+const srcList = [
+  resolve('src'),
+  resolve('src-logic'),
+  resolve('test'),
+]
+
 const createLintingRule = () => ({
   test: /\.(js|jsx)$/,
   loader: 'eslint-loader',
   enforce: 'pre',
   include: [
-    resolve('src-app'),
-    resolve('src-components'),
-    resolve('src-logic'),
-    resolve('test')
+    ...srcList
   ],
   options: {
     formatter: require('eslint-friendly-formatter'),
@@ -26,7 +29,7 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src-app/main.js'
+    app: './src/app/main.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -38,8 +41,9 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      '@app': resolve('src-app'),
-      '@components': resolve('src-components'),
+      '@src': resolve('src'),
+      '@app': resolve('src/app'),
+      '@components': resolve('src/components'),
       '@assets': resolve('src-assets'),
       '@logic': resolve('src-logic'),
       '@images': resolve('static/images'),
@@ -52,10 +56,7 @@ module.exports = {
         test: /\.jsx?$/,
         loader: 'babel-loader',
         include: [
-          resolve('src-app'),
-          resolve('src-components'),
-          resolve('src-logic'),
-          resolve('test'),
+          ...srcList,
           resolve('node_modules/webpack-dev-server/client')
         ]
       },
