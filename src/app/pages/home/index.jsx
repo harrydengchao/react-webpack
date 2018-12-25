@@ -32,8 +32,10 @@ export class Index extends Component {
   render() {
     return (
       <div className={cls(`${prefixCls}`)}>
-        this is index.
-        <Link to="/about">to about.</Link>
+        <div className={cls(`${prefixCls}-article`)}>
+          <span>this is index.</span>
+          <Link to="/about">to about.</Link>
+        </div>
         <div>
           The count is {this.props.count}
           <Button type="primary" onClick={this.props.increment}>increment</Button>

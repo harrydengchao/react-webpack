@@ -9,7 +9,6 @@ function resolve (dir) {
 
 const srcList = [
   resolve('src'),
-  resolve('src-logic'),
   resolve('test'),
 ]
 
@@ -44,8 +43,8 @@ module.exports = {
       '@src': resolve('src'),
       '@app': resolve('src/app'),
       '@components': resolve('src/components'),
-      '@assets': resolve('src-assets'),
-      '@logic': resolve('src-logic'),
+      '@assets': resolve('src/assets'),
+      '@logic': resolve('src/logic'),
       '@images': resolve('static/images'),
     }
   },
